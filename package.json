@@ -1,0 +1,10 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "poq-wta": "lerna run --scope poq-wta start"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
