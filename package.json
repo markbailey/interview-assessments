@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "interview-assessments",
   "private": true,
   "scripts": {
     "poq-wta": "lerna run --scope poq-wta start"
