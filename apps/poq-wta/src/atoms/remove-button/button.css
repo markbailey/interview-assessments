@@ -1,0 +1,26 @@
+.button {
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.button:not(:disabled) {
+  color: #fefefe;
+  background-color: #803dc2;
+  border: 0.13rem solid #803dc2;
+}
+
+.button:not(:disabled):hover {
+  color: #fefefe;
+  background-color: #6d34a7;
+  border-color: #6d34a7;
+}
+
+.button:not(:disabled):focus {
+  outline: 0.13rem solid #6d34a7;
+  outline-offset: 0.13rem;
+}
+
+.button:not(:disabled):active {
+  color: #34194e;
+  box-shadow: inset 0 0 10px #000;
+}

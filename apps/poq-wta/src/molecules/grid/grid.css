@@ -1,0 +1,31 @@
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex-shrink: 1;
+  max-width: 100%;
+}
+
+@media  (min-width: 475px) {
+  .grid-item {
+    flex-basis: 50%;
+  }
+}
+
+@media  (min-width: 768px) {
+  .grid-item {
+    flex-basis: 33.33%;
+  }
+}
+
+@media  (min-width: 991px) {
+  .grid-item {
+    flex-basis: 25%;
+  }
+}
