@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
+  a { color: #ffffff; }
+
   #root {
     display: flex;
     justify-content: center;
