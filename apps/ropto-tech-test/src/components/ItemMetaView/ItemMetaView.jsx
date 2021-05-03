@@ -75,6 +75,8 @@ function ItemMetaView({
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
     hour12: false
   };
 
@@ -111,7 +113,7 @@ function ItemMetaView({
                 </IconWrapper>
 
                 <TextWrapper>
-                  <span>{new Date(time).toLocaleString('en-GB', dateOptions)}</span><br />
+                  <span>{new Date(time * 1000).toLocaleString('en-GB', dateOptions)}</span><br />
                   {title ? <h2>{title}</h2> : null}
                   <span>Author: {by}</span>
 
