@@ -1,0 +1,42 @@
+import styled from 'styled-components';
+
+const columns = (count, max) => {
+  let array = [...new Array(count)];
+  if (max < count) 
+    array = array.filter((_, i) => i < max);
+  return array.map(() => 'auto').join(' ');
+};
+
+export const GridContainer = styled.ul`
+  display: grid;
+  grid-template-columns: ${props => columns(2, props.maxColumns)};
+  gap: 1rem;
+  list-style: none;
+  
+  margin: 0;
+  padding: 0;
+  
+  width: 100%;
+  max-width: 100%;
+
+  @media (max-width: 319px) {
+    grid-template-columns: ${props => columns(1, props.maxColumns)};
+  }
+
+  @media (min-width: 425px) {
+    grid-template-columns: ${props => columns(3, props.maxColumns)};
+  }
+
+  @media (min-width: 576px) {
+    grid-template-columns: ${props => columns(4, props.maxColumns)};
+  }
+`;
+
+export const GridItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  transition: all 250ms ease-in-out;
+`;
