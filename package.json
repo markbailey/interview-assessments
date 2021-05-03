@@ -2,7 +2,9 @@
   "name": "interview-assessments",
   "private": true,
   "scripts": {
-    "poq-wta": "lerna run --scope poq-wta start"
+    "setup": "lerna bootstrap",
+    "poq": "lerna run --scope poq-wta start",
+    "ropto": "lerna run --scope ropto-tech-test start"
   },
   "devDependencies": {
     "lerna": "^3.20.2"
