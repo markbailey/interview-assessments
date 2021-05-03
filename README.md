@@ -1,5 +1,18 @@
 # interview-assessments
 Interview assessment projects
 
-## Projects
-POG-WTA (POQ: https://poqcommerce.com/)
+## Initial Setup
+Open a terminal in the root directory of the repository and run the following command.
+
+`yarn run setup`
+
+## How to run
+Open a terminal in the root directory of the repository and run one of the following commands.
+Make sure you have run the initial setup first.
+
+POG-WTA - `yarn run poq`
+ROPTO-TECH-TEST - `yarn run ropto`
+
+## Associated Companies
+POQ: https://poqcommerce.com
+ROPTO: http://www.ropto.com
