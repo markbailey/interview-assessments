@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const columns = (count, max) => {
   let array = [...new Array(count)];
   if (max < count) 
-    array = array.filter((_, i) => i < max);
+    array = array.slice(0, max);
   return array.map(() => 'auto').join(' ');
 };
 

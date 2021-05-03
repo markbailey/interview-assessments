@@ -65,7 +65,8 @@ function ItemMetaView({
   const { setSelectedItemId, kidCount } = useContext(HackerNewsContext);
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
-  const filteredKids = kids ? kids.filter((_, i) => i < kidCount) : [];
+  
+  const filteredKids = kids ? kids.slice(0, kidCount) : [];
   const maxColumns = filteredKids.length > kidCount
     ? kidCount
     : filteredKids.length;
@@ -116,6 +117,7 @@ function ItemMetaView({
                   <span>{new Date(time * 1000).toLocaleString('en-GB', dateOptions)}</span><br />
                   {title ? <h2>{title}</h2> : null}
                   <span>Author: {by}</span>
+                  {score ? (<><br /><span>Score: {score}</span></>) : null}
 
                   {url ? (
                     <>
