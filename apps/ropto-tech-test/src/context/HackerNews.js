@@ -77,15 +77,15 @@ export function HackerNewsProvider({ children }) {
       }));
   };
 
-  const setTopStoryCount = (count) => dispatch({ 
-    type: 'SET_TOPSTORY_COUNT',
-    payload: count 
-  });
+  // const setTopStoryCount = (count) => dispatch({ 
+  //   type: 'SET_TOPSTORY_COUNT',
+  //   payload: count 
+  // });
 
-  const setKidCount = (count) => dispatch({ 
-    type: 'SET_KID_COUNT',
-    payload: count 
-  });
+  // const setKidCount = (count) => dispatch({ 
+  //   type: 'SET_KID_COUNT',
+  //   payload: count 
+  // });
 
   const setItems = (items) => dispatch({ 
     type: 'SET_ITEMS',
@@ -114,8 +114,8 @@ export function HackerNewsProvider({ children }) {
 
   const newState = {
     ...state,
-    setTopStoryCount,
-    setKidCount,
+    // setTopStoryCount,
+    // setKidCount,
     setSelectedItemId,
   };
 
