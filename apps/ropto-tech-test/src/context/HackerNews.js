@@ -103,13 +103,8 @@ export function HackerNewsProvider({ children }) {
     });
   };
 
-  const setSelectedItemId = async (id = null) => {
-    const itemExists = id 
-      ? [...state.items]
-          .find((item) => item.id === id)
-      : false;
-    
-    if (!itemExists && Boolean(id)) {
+  const setSelectedItemId = async (id = null) => {    
+    if (Boolean(id)) {
       const item = await apiFetch(`item/${id}`);
       if (item) setItems([...state.items, item]);
     }
