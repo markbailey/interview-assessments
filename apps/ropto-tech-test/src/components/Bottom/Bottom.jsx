@@ -28,9 +28,10 @@ function Bottom({ open, meta, maxItems, ...otherProps }) {
     hour12: false
   };
 
-  const items = meta 
+  const items = (meta 
     ? meta.kids || []
-    : [];
+    : [])
+    .filter((item) => !item.deleted);
 
   return (
     <Wrapper {...otherProps} open={open}>
