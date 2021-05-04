@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import BackgroundImage from './assets/background.png';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -21,28 +20,18 @@ const GlobalStyle = createGlobalStyle`
     color: #ffffff;
   }
 
+  a { color: #212121; }
+
   code {
     width: 100%;
   }
 
-  a { color: #ffffff; }
-
   #root {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     
     width: 100%;
     height: 100vh;
-
-    background-color: rgb(255 109 0 / 70%);
-    background-image: url('${BackgroundImage}');
-    background-repeat: no-repeat;
-
-    overflow-y: auto;
-
-    @media (min-width: 768px) {
-      align-items: center;
-    }
   }
 `;
 

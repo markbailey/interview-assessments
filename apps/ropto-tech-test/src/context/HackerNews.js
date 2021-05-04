@@ -97,9 +97,9 @@ export function HackerNewsProvider({ children }) {
     
     dispatch({ 
       type: 'SET_TOPSTORY_IDS',
-      payload: ids
-        .filter((item) => !item.deleted)
-        .slice(0, state.topStoryCount)
+      payload: ids.filter(
+        (_, i) => i < state.topStoryCount
+      ) 
     });
   };
 

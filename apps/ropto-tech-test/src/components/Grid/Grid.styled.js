@@ -7,10 +7,11 @@ const columns = (count, max) => {
   return array.map(() => 'auto').join(' ');
 };
 
-export const GridContainer = styled.ul`
+export const Container = styled.ul`
   display: grid;
   grid-template-columns: ${props => columns(2, props.maxColumns)};
   gap: 1rem;
+  align-items: center;
   list-style: none;
   
   margin: 0;
@@ -23,20 +24,16 @@ export const GridContainer = styled.ul`
     grid-template-columns: ${props => columns(1, props.maxColumns)};
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 576px) {
     grid-template-columns: ${props => columns(3, props.maxColumns)};
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     grid-template-columns: ${props => columns(4, props.maxColumns)};
   }
 `;
 
-export const GridItem = styled.li`
+export const Item = styled.li`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  transition: all 250ms ease-in-out;
 `;

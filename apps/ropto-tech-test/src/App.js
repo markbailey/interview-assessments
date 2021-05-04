@@ -1,37 +1,36 @@
 import React, { useContext } from 'react';
 
 import { HackerNewsContext } from './context/HackerNews';
-import Container from './components/Container';
-import Header from './components/Header';
-
-import Grid from './components/Grid';
-import ItemMetaView from './components/ItemMetaView';
-import Main from './components/Styled/Main.styled';
+import Top from './components/Top';
+import Bottom from './components/Bottom';
+import Button from './components/Button';
+import ButtonWrapper from './components/Styled/ButtonWrapper.styled';
 
 function App() {
   const {
-    topStoryCount,
+    kidCount,
     topStoryIds,
     selectedItemId,
     items,
     setSelectedItemId
   } = useContext(HackerNewsContext);
 
-  const itemMetaData = selectedItemId 
+  const meta = selectedItemId 
     ? items.find((item) => item.id === selectedItemId)
-    : {};
+    : undefined;
 
-  const showMeta = Boolean(itemMetaData && selectedItemId);
+  const showBack = Boolean(meta && meta.parent);
 
   return (
     <>
-      <ItemMetaView {...itemMetaData} show={showMeta} onClose={() => setSelectedItemId()} />
-      <Container>
-        <Header storiesCount={topStoryCount} />
-        <Main>
-          <Grid items={topStoryIds} />
-        </Main>
-      </Container>
+      <Top open={!selectedItemId} items={topStoryIds}/>
+
+      <ButtonWrapper>
+        {Boolean(selectedItemId) ? (<Button dark onClick={() => setSelectedItemId(null)} />) : null}
+        {showBack ? <Button onClick={() => setSelectedItemId(meta.parent)} /> : null}
+      </ButtonWrapper>
+      
+      <Bottom open={Boolean(selectedItemId)} meta={meta} maxItems={kidCount} />
     </>
   );
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { HackerNewsContext } from '../../context/HackerNews';
 import ItemCard from '../ItemCard';
-import { GridContainer, GridItem } from './Grid.styled';
+import { Container, Item } from './Grid.styled';
 
 const propTypes = {
   items: PropTypes.oneOfType([
@@ -11,43 +11,43 @@ const propTypes = {
     PropTypes.arrayOf(PropTypes.number),
   ]),
   maxColumns: PropTypes.number,
-  iconSize: PropTypes.number,
+  invert: PropTypes.bool,
 };
 
 const defaultProps = {
   items: [],
   maxColumns: undefined,
-  iconSize: undefined,
+  invert: false,
 };
 
 function Grid({
   items,
   maxColumns,
-  iconSize,
+  invert,
   ...otherProps
 }) {
   const { setSelectedItemId, items: itemMetas } = useContext(HackerNewsContext);
 
   const getType = (id) => {
     const item = itemMetas.find((item) => item.id === id);
-    return item ? item.type : null;
+    return item ? item.type : undefined;
   };
 
   return (
-    <GridContainer {...otherProps} maxColumns={maxColumns}>
+    <Container {...otherProps} maxColumns={maxColumns}>
       {items.map((id) => {
         return (
-          <GridItem key={id}>
+          <Item key={id}>
             <ItemCard
               id={id} 
               type={getType(id)}
-              iconSize={iconSize}
+              inverted={invert}
               onClick={() => setSelectedItemId(id)}
             />
-          </GridItem>
+          </Item>
         );
       })}
-    </GridContainer>
+    </Container>
   )
 }
 

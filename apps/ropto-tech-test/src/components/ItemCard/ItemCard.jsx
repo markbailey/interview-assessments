@@ -1,24 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Icon from '../Icons/Icon';
-import { Card } from './ItemCard.styled';
+import { Card, Heading } from './ItemCard.styled';
 
 const propTypes = {
   id: PropTypes.number.isRequired,
   type: PropTypes.string,
-  iconSize: PropTypes.number
+  inverted: PropTypes.bool
 };
 
 const defaultProps = {
   type: 'feed',
-  iconSize: 64,
+  inverted: false
 };
 
-function ItemCard({ id, type, iconSize, ...otherProps }) {
+function ItemCard({ id, type, inverted, ...otherProps }) {
   return (
-    <Card {...otherProps}>
-      <Icon name={type} size={iconSize} color="#ffffff"/>
+    <Card {...otherProps} inverted={inverted}>
+      <Heading>{type === 'feed' ? 'article' : type}</Heading>
       <small>{id}</small>
     </Card>
   );
