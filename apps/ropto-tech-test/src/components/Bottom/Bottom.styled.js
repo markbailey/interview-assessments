@@ -13,13 +13,15 @@ export const Wrapper = styled.div`
   color: #212121;
 `;
 
-export const TextWrapper = styled.div`
+export const TextWrapper = styled.div` word-break: break-all; `;
+
+export const ScrollableContent = styled.div`
   flex: 1; 
   overflow-y: auto; 
   margin-bottom: 0.5rem;
 `;
 
-export const Type = styled.small`
+export const ColoredText = styled.small`
   color: #fb651e;
   text-transform: capitalize;
 `;

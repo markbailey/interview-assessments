@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Content from '../Content';
 import Grid from '../Grid';
-import { Wrapper, TextWrapper, Type, Title, SubHeading } from './Bottom.styled';
+import { Wrapper, TextWrapper, ScrollableContent, ColoredText, Title, SubHeading } from './Bottom.styled';
 
 const propTypes = {
   meta: PropTypes.object,
@@ -36,16 +36,16 @@ function Bottom({ open, meta, maxItems, ...otherProps }) {
   return (
     <Wrapper {...otherProps} open={open}>
       <Content show={open}>
-        <TextWrapper>
-          <Type>{meta.type}</Type><br />
+        <ScrollableContent>
+          <ColoredText>{meta.type}</ColoredText><br />
           {meta.title ? (<Title>{meta.title}</Title>) : null}
           <small>By {meta.by} &nbsp;|&nbsp; {new Date(meta.time * 1000).toLocaleString('en-GB', dateOptions)}</small>
-          {meta.score ? (<><br /><Type>Score: {meta.score}</Type></>) : null}
+          {meta.score ? (<><br /><ColoredText>Score: {meta.score}</ColoredText></>) : null}
           {meta.url ? (<><br /><br /><span>URL: <a href={meta.url} rel="noreferrer" target="_blank">{meta.url}</a></span></>) : null}
           <br /><br />
 
-          {meta.text ? (<div dangerouslySetInnerHTML={{ __html: meta.text }} />) : null}
-        </TextWrapper>
+          {meta.text ? (<TextWrapper dangerouslySetInnerHTML={{ __html: meta.text }} />) : null}
+        </ScrollableContent>
           
         {(items.length > 0) ? (
           <div>
