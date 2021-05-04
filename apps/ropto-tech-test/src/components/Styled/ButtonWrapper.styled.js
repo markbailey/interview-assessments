@@ -24,6 +24,20 @@ const ButtonWrapper = styled.div`
     right: 0;
     background-color: #212121;
   }
+
+  @media (min-width: 768px) {
+    ::before {
+      top: 58px;
+      right: -29px;
+    }
+  
+    ::after {
+      top: 0;
+      bottom: auto;
+      right: -29px;
+      background-color: #212121;
+    }
+  }
 `;
 
 export default ButtonWrapper;

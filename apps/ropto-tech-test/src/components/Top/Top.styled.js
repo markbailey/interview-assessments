@@ -11,8 +11,10 @@ export const Wrapper = styled.div`
   padding: ${props => props.open ? '1rem 1rem 2.5rem' : '0 1rem 2.5rem'};
 
   @media (min-width: 768px) {
+    flex: 1;
     align-items: center;
     justify-content: center;
+    padding: 1rem 2.5rem 1rem 1rem;
   }
 `;
 

@@ -19,4 +19,8 @@ export const ButtonRoot = styled.button`
   background-size: 75%;
   background-position: center;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    ${props => !props.dark ? 'top: 58px; right: -29px;' : 'top: 0; right: -29px; bottom: auto;'}
+  }
 `;
