@@ -13,13 +13,17 @@ export const Wrapper = styled.div`
   color: #212121;
 
   @media (min-width: 768px) {
-    flex: 0 1 auto;
-    transition: width 250ms ease-in-out;
     padding: ${props => props.open ? '1rem 1rem 1rem 2.5rem;' : '1rem 2.5rem 1rem 0'};
     width: ${props => props.open ? '50%' : '0px'};
   }
 
   @media (min-width: 992px) {
+    flex: 0 1 auto;
+    transition: width 250ms ease-in-out;
+    width: ${props => props.open ? '45%' : '0px'};
+  }
+
+  @media (min-width: 1200px) {
     width: ${props => props.open ? '33%' : '0px'};
   }
 `;

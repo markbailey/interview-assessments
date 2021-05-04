@@ -15,6 +15,11 @@ export const Wrapper = styled.div`
 
   @media (min-width: 768px) {
     ${props => props.top ? 'flex: 0 1 auto;' : ''}
+    transform: translateX(${props => props.top ? '' : '-'}250%);
+    ${props => props.show ? 'transform: translateX(0);' : 'overflow: hidden;'}
+  }
+
+  @media (min-width: 992px) {
     transform: ${props => props.top ? 'none' : 'translateX(-250%)'};
     ${props => props.show ? 'transform: translateX(0);' : ''}
   }
