@@ -16,6 +16,10 @@ export const Wrapper = styled.div`
     flex: 0 1 auto;
     transition: width 250ms ease-in-out;
     padding: ${props => props.open ? '1rem 1rem 1rem 2.5rem;' : '1rem 2.5rem 1rem 0'};
+    width: ${props => props.open ? '50%' : '0px'};
+  }
+
+  @media (min-width: 992px) {
     width: ${props => props.open ? '33%' : '0px'};
   }
 `;
