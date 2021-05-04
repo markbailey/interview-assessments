@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     color: #ffffff;
   }
 
-  a { color: #212121; }
+  a { color: #fb651e !important; }
 
   code {
     width: 100%;
