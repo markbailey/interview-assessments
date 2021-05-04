@@ -39,7 +39,8 @@ function Bottom({ open, meta, maxItems, ...otherProps }) {
           <Type>{meta.type}</Type><br />
           {meta.title ? (<Title>{meta.title}</Title>) : null}
           <small>By {meta.by} &nbsp;|&nbsp; {new Date(meta.time * 1000).toLocaleString('en-GB', dateOptions)}</small>
-          {meta.score ? (<><br /><Type>Score {meta.score}</Type></>) : null}
+          {meta.score ? (<><br /><Type>Score: {meta.score}</Type></>) : null}
+          {meta.url ? (<span>URL: <a href={meta.url} rel="noreferrer" target="_blank">{meta.url}</a></span>) : null}
           <br /><br />
 
           {meta.text ? (<div dangerouslySetInnerHTML={{ __html: meta.text }} />) : null}
