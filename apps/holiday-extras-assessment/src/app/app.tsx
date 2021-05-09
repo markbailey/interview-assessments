@@ -92,14 +92,14 @@ function App() {
 
             {photoMeta.description ? (
               <>
-                <br /><strong>Description</strong>
+                <br /><strong>DESCRIPTION</strong>
                 <p dangerouslySetInnerHTML={{ __html: photoMeta.description || '' }}></p>
               </>
             ) : <p>There is no description for this photo.</p>}
 
             {photoMeta.tags.length > 0 ? (
               <>
-                <strong>Tags</strong>
+                <strong>TAGS</strong>
                 <TagWrapper>
                   {photoMeta.tags.map((tag: any) => (
                     <Tag key={tag.id}>{tag._content}</Tag>
