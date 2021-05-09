@@ -126,7 +126,7 @@ function App() {
               User Profile
             </Button>
           </>
-        ) : null}
+        ) : <h2>Loading... Please wait...</h2>}
       </Modal>
 
       <Navbar>
@@ -147,7 +147,8 @@ function App() {
                   ref={ref}
                   data-src={smallSrc}
                   data-srcset={`${mediumSrc} 640w, ${smallSrc} 400w`}
-                  alt={'Image Loading'}
+                  data-alt={photo.title as string}
+                  alt="Image Loading"
                   onClick={() => setSelectedPhotoId(photo.id)}
                   grid
                 />

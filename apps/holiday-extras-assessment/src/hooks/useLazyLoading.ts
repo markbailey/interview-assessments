@@ -14,6 +14,7 @@ function useLazyLoading() {
             try {
               lazyImage.src = lazyImage.dataset.src || image404;
               lazyImage.srcset = lazyImage.dataset.srcset || '';
+              lazyImage.alt = lazyImage.dataset.alt || '';
             } catch (error) {
               console.error('Load!', error);
               lazyImage.src = image404;
