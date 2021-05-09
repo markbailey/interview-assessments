@@ -86,7 +86,11 @@ function App() {
       >
         {photoMeta.size ?(
           <>
-            <Photo data-src={getFlickrUrl({ ...photoMeta, size: 'medium' })} alt={photoMeta.title || ''} />
+            <Photo
+              data-src={getFlickrUrl({ ...photoMeta, size: 'small' })}
+              data-srcset={`${getFlickrUrl({ ...photoMeta, size: 'medium' })} 640w, ${getFlickrUrl({ ...photoMeta, size: 'small' })} 400w`}
+              alt={photoMeta.title || ''} 
+            />
             <MetaTitle>{photoMeta.title}</MetaTitle>
             <Author>Author: <Username>{photoMeta.author.username}</Username></Author>
 
