@@ -96,7 +96,7 @@ function App() {
                 <br /><strong>Description</strong>
                 <p dangerouslySetInnerHTML={{ __html: photoMeta.description || '' }}></p>
               </>
-            ) : null}
+            ) : <p>There is no description for this photo.</p>}
 
             {photoMeta.tags.length > 0 ? (
               <>
