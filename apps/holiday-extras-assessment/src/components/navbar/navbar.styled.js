@@ -22,12 +22,16 @@ export const NavbarRoot = styled.nav`
 `;
 
 export const Span = styled.span`
+  display: none;
   font-size: smaller;
   text-transform: uppercase;
   align-self: center;
-  padding: 0.5rem;
 
-  @media (max-width: 768px) {
+  @media (min-width: 375px) {
+    display: inline;
+  }
+
+  @media (min-width: 768px) {
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
