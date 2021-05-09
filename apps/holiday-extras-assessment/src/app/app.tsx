@@ -86,7 +86,6 @@ function App() {
       >
         {photoMeta.size ?(
           <>
-          {console.log(photoMeta)}
             <Photo data-src={getFlickrUrl({ ...photoMeta, size: 'medium' })} alt={photoMeta.title || ''} />
             <MetaTitle>{photoMeta.title}</MetaTitle>
             <Author>Author: <Username>{photoMeta.author.username}</Username></Author>
