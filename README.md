@@ -12,7 +12,9 @@ Make sure you have run the initial setup first.
 
 POG-WTA - `yarn run poq`
 ROPTO-TECH-TEST - `yarn run ropto`
+HOLIDAY-EXTRAS-ASSESSMENT - `yarn run holiday-extras`
 
 ## Associated Companies
 POQ: https://poqcommerce.com
 ROPTO: http://www.ropto.com
+HOLIDAY EXTRAS: https://www.holidayextras.com

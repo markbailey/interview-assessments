@@ -4,7 +4,8 @@
   "scripts": {
     "setup": "lerna bootstrap",
     "poq": "lerna run --scope poq-wta start",
-    "ropto": "lerna run --scope ropto-tech-test start"
+    "ropto": "lerna run --scope ropto-tech-test start",
+    "holiday-extras": "lerna run --scope holiday-extras-assessment start"
   },
   "devDependencies": {
     "lerna": "^3.20.2"
