@@ -41,8 +41,8 @@ export default function Provider({ children }: IProviderProps) {
     setState(type, newPayload);
   }
   
-  function setPhoto (type: string, payload: any, error: boolean) {
-    if (error) setState(type, payload);
+  function setPhoto (type: string, payload: any, setAsIs: boolean) {
+    if (setAsIs) return setState(type, payload);
 
     const index = state.photos
       .findIndex((photo: IPhotoMeta) => photo.id === payload.id);

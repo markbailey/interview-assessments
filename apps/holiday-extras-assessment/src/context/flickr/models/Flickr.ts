@@ -32,6 +32,7 @@ class Flickr {
   }
 
   static async getInfo (photoId: string, callback: Function) {
+    callback(actions.SET_ERROR, null, true);
     return flickr.photos  
       .getInfo({ photo_id: photoId })
       .then((response: any) => {
