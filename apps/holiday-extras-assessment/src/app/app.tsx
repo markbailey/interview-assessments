@@ -76,7 +76,7 @@ function App() {
       {error ? (
         <Alert context="error" center>
           <strong>Looks like we are having issues connecting to Flickr!</strong><br />
-          <span>Try refreshing the page to fix the problem.</span>
+          <span>Try checking your internet connection.</span>
         </Alert>
       ) : null}
 
@@ -153,7 +153,7 @@ function App() {
                   data-srcset={`${mediumSrc} 640w, ${smallSrc} 400w`}
                   data-alt={photo.title as string}
                   alt="Image Loading"
-                  onClick={() => setSelectedPhotoId(photo.id)}
+                  onClick={() => setSelectedPhotoId(!error ? photo.id : null)}
                   grid
                 />
               </GridColumn>
