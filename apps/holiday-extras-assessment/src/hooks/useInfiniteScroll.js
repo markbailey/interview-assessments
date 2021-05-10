@@ -15,7 +15,7 @@ export default function useInfiniteScroll() {
 
   const lastElementRef = useCallback((node) => {
     if (loading) return;
-    if (observer.current) observer.current.disconnect(); // TS doesn't like observer.current, things it potential is undefined
+    if (observer.current) observer.current.disconnect(); // TS doesn't like observer.current, thinks it potential is undefined
     
     observer.current = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && hasMore)
