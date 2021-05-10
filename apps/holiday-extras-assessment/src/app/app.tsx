@@ -46,12 +46,16 @@ function App() {
   }
 
   useEffect(() => {
+    let mounted = true;
     const delay = selected_photo_id ? 0 : 500;
     const meta = selected_photo_id
       ? photos.find((photo: IPhotoMeta) => photo.id === selected_photo_id) || emptyMeta
       : emptyMeta;
 
-    setTimeout(() => setPhotoMeta(meta), delay);
+    setTimeout(() => mounted ? setPhotoMeta(meta) : false, delay);
+    return () => {
+      mounted = false;
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected_photo_id, photos])
 
@@ -84,6 +88,15 @@ function App() {
         open={Boolean(selected_photo_id)}
         onHide={() => setSelectedPhotoId(null)}
       >
+        {error ? (
+          <Alert context="error" center>
+            <strong>Looks like we are having issues connecting to Flickr!</strong><br />
+            <span>Try checking your internet connection.</span>
+          </Alert>
+        ) : null}
+
+        {!error && !photoMeta.size ? <h2>Loading... Please wait...</h2> : null}
+
         {photoMeta.size ?(
           <>
             <Photo
@@ -130,7 +143,7 @@ function App() {
               User Profile
             </Button>
           </>
-        ) : <h2>Loading... Please wait...</h2>}
+        ) : null}
       </Modal>
 
       <Navbar>
@@ -153,7 +166,7 @@ function App() {
                   data-srcset={`${mediumSrc} 640w, ${smallSrc} 400w`}
                   data-alt={photo.title as string}
                   alt="Image Loading"
-                  onClick={() => setSelectedPhotoId(!error ? photo.id : null)}
+                  onClick={() => setSelectedPhotoId(photo.id)}
                   grid
                 />
               </GridColumn>

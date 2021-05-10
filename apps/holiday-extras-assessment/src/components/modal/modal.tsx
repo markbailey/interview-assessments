@@ -10,13 +10,18 @@ function Modal({ children, open, color, onHide }: IModalProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let unmounted = false;
     if (open) {
-      if (!mounted) setMounted(true);
-      else if (!visible) setTimeout(() => setVisible(true), 300);
+      if (!mounted && !unmounted) setMounted(true);
+      else if (!visible) setTimeout(() => !unmounted ? setVisible(true) : false, 300);
     } else {
-      if (visible) setVisible(false);
-      else if (mounted) setTimeout(() => setMounted(false), 300);
+      if (visible && !unmounted) setVisible(false);
+      else if (mounted) setTimeout(() => !unmounted ? setMounted(false) : false, 300);
     }
+
+    return () => {
+      unmounted = true;
+    };
   }, [open, visible, mounted]);
 
   return mounted
