@@ -16,6 +16,13 @@ import ScrollPanel from '../components/styled/scroll-panel.styled';
 import ToTopButton from '../components/styled/to-top-button.styled';
 import { MetaTitle, Author, Username, Tag, TagWrapper } from '../components/styled/meta.styled';
 
+const ErrorAlert = () => (
+  <Alert context="error" center>
+    <strong>Looks like we are having issues connecting to Flickr!</strong><br />
+    <span>Try checking your internet connection.</span>
+  </Alert>
+);
+
 function App() {
   const {
     photos,
@@ -77,23 +84,13 @@ function App() {
 
   return (
     <>
-      {error ? (
-        <Alert context="error" center>
-          <strong>Looks like we are having issues connecting to Flickr!</strong><br />
-          <span>Try checking your internet connection.</span>
-        </Alert>
-      ) : null}
+      {error ? (<ErrorAlert />) : null}
 
       <Modal
         open={Boolean(selected_photo_id)}
         onHide={() => setSelectedPhotoId(null)}
       >
-        {error ? (
-          <Alert context="error" center>
-            <strong>Looks like we are having issues connecting to Flickr!</strong><br />
-            <span>Try checking your internet connection.</span>
-          </Alert>
-        ) : null}
+        {error ? (<ErrorAlert />) : null}
 
         {!error && !photoMeta.size ? <h2>Loading... Please wait...</h2> : null}
 
