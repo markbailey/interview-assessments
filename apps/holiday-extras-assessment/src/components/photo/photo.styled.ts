@@ -9,7 +9,6 @@ const gridStyle = css`
   transition: all 0.3s ease-in-out;
 
   cursor: pointer;
-  border: 1px solid #f5f5f5;
 
   :hover {
     filter: brightness(1) grayscale(0);
@@ -19,5 +18,5 @@ const gridStyle = css`
 
 export const Image = styled.img<IImageProps>`
   width: 100%;
-  ${props => props.grid ? gridStyle : 'margin: 0 0 1rem;'}
+  ${props => props.grid ? gridStyle : 'margin: 0 0 1rem; border: 2px solid #151515;'}
 `;
