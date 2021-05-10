@@ -1,7 +1,8 @@
 // import { renderToStaticMarkup } from 'react-dom/server';
 import styled from 'styled-components';
+import IButtonRootProps from './interfaces/IButtonRootProps';
 
-export const ButtonRoot = styled.button`
+export const ButtonRoot = styled.button<IButtonRootProps>`
   display: block;
   border: 1px solid ${props => props.primary ? '#0063dc' : '#ff0084'};
   border-radius: 20px;

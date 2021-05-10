@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import IToTopButtonProps from './interfaces/IToTopButtonProps';
 
-const ToTopButton = styled.button`
+const ToTopButton = styled.button<IToTopButtonProps>`
   position: fixed;
   right: 1rem;
   bottom: 1rem;

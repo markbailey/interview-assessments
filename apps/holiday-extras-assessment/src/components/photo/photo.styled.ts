@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import IImageProps from './interfaces/IImageProps';
 
 const gridStyle = css`
   object-fit: cover; 
@@ -16,7 +17,7 @@ const gridStyle = css`
   }
 `
 
-export const Image = styled.img`
+export const Image = styled.img<IImageProps>`
   width: 100%;
   ${props => props.grid ? gridStyle : 'margin: 0 0 1rem;'}
 `;

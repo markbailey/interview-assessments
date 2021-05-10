@@ -38,7 +38,7 @@ export const ModalRoot = styled.div<IModalRootProps>`
   margin: 0 auto;
   border: 5px solid #151515;
 
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   transform: translateY(200%);
 
   @media (min-width: 768px) {
