@@ -10,11 +10,6 @@ export default function reducer(state: IState, action: IAction) {
         loading: action.payload,
         error: null,
       };
-    case actions.SET_SHOW_SEARCH:
-      return {
-        ...state,
-        show_search: action.payload,
-      };
     case actions.SET_PHOTOS:
       return {
         ...state,
