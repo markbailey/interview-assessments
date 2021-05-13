@@ -48,5 +48,8 @@
       "last 1 safari version",
       "last 1 ie version"
     ]
+  },
+  "devDependencies": {
+    "react-test-renderer": "^17.0.2"
   }
 }
