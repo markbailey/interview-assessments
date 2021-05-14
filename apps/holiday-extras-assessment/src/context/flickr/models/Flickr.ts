@@ -46,19 +46,19 @@ class Flickr {
     if (!photo || !photo.id) return null;
     switch (type) {
       case 'page':
-        return `https://www.flickr.com/photos/${photo.author.id}/${photo.id}`;
+        return `https://www.flickr.com/photos/${photo?.author?.id}/${photo?.id}`;
       case 'profile':
-        return `https://www.flickr.com/people/${photo.author.id}`;
+        return `https://www.flickr.com/people/${photo?.author?.id}`;
       default:
-        const size: string = photo.size || 'medium';
-        return `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_${PHOTO_SIZES[size]}.jpg`
+        const size: string = photo?.size || 'medium';
+        return `https://live.staticflickr.com/${photo?.server}/${photo?.id}_${photo?.secret}_${PHOTO_SIZES[size]}.jpg`
     }
   }
 
   static getMeta (photo: IPhotoMeta, size = 'medium') { 
     if (!photo) return photo;
     
-    const title = photo.title._content;
+    const title = photo.title._content as string;
     const userId = photo.owner.nsid;
     const username = photo.owner.username;
     const description = photo.description._content;
